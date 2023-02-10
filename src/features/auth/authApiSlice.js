@@ -7,10 +7,6 @@ export const authApiSlice = apiSlice.injectEndpoints({
             query: credentials => ({
                 url: '/auth',
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + credentials
-                },
                 body: { ...credentials }
             })
         }),
