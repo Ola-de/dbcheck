@@ -24,15 +24,14 @@ const PersistLogin = () => {
 
     useEffect(() => {
 
-        if (effectRan.current === true || process.env.NODE_ENV !== 'production') { // React 18 Strict Mode
+        if (effectRan.current === true || process.env.NODE_ENV !== 'development') { // React 18 Strict Mode
 
             const verifyRefreshToken = async () => {
                 console.log('verifying refresh token')
                 try {
-                    // const response =
+                    //const response = 
                     await refresh()
-                    // const { accessToken } = response.data
-                    // console.log(accessToken);
+                    //const { accessToken } = response.data
                     setTrueSuccess(true)
                 }
                 catch (err) {
@@ -55,7 +54,7 @@ const PersistLogin = () => {
         content = <Outlet />
     } else if (isLoading) { //persist: yes, token: no
         console.log('loading')
-        content = <PulseLoader className='#FFF'/>
+        content = <PulseLoader color={"#FFF"} />
     } else if (isError) { //persist: yes, token: no
         console.log('error')
         content = (
