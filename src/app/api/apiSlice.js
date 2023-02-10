@@ -5,10 +5,12 @@ const baseQuery = fetchBaseQuery({
     baseUrl: 'https://dbcheck-api.onrender.com',
     mode: 'cors',
     credentials: 'include',
-    headers: {
-        'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Origin': 'https://dbcheck-api.onrender.com',
-    },
+    // headers: {
+    //     'Access-Control-Allow-Credentials': true,
+    //     'Access-Control-Allow-Origin': 'https://dbcheck-api.onrender.com',
+    //     'Access-Control-Allow-Methods': ['GET, POST, PUT, PATCH, DELETE', 'HEAD'],
+    //     'Access-Control-Allow-Headers': ['Content-Type, Authorization', 'X-Requested-With', 'Accept']
+    // },
     prepareHeaders : (headers, {getState}) => {
         const token = getState().auth.token
         if(token){

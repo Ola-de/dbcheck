@@ -8,7 +8,8 @@ export const authApiSlice = apiSlice.injectEndpoints({
                 url: '/auth',
                 method: 'POST',
                 headers: {
-                    "Access-Control-Allow-Origin": "https://dbcheck-api.onrender.com",
+                    'Access-Control-Allow-Credentials': true,
+                    'Access-Control-Allow-Origin': 'https://dbcheck-api.onrender.com',
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + credentials
                 },
