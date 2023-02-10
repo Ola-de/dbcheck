@@ -3,7 +3,7 @@ import { setCredentials } from '../../features/auth/authSlice';
 
 const baseQuery = fetchBaseQuery({
     baseUrl: 'https://dbcheck-api.onrender.com',
-    mode: 'no cors',
+
     headers: {
         'Access-Control-Allow-Credentials': true,
         'Access-Control-Allow-Origin': 'https://dbcheck-api.onrender.com',
