@@ -6,8 +6,8 @@ const baseQuery = fetchBaseQuery({
     mode: 'cors',
     credentials: 'include',
     headers: {
-        'Access-Control-Allow-Origin': 'https://dbcheck-api.onrender.com',
         'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Origin': 'https://dbcheck-api.onrender.com',
     },
     prepareHeaders : (headers, {getState}) => {
         const token = getState().auth.token
