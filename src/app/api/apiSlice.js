@@ -7,7 +7,7 @@ const baseQuery = fetchBaseQuery({
     prepareHeaders : (headers, {getState}) => {
         const token = getState().auth.token
         if(token){
-            headers.set('Access-Control-Allow-Origin', '*')
+            headers.set('Access-Control-Allow-Origin','https://dbcheck-api.onrender.com')
             headers.set('Content-Type','application/json')
             headers.set('Authorization', `Bearer ${token}`)
         }
