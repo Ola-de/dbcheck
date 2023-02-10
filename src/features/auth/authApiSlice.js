@@ -5,10 +5,10 @@ export const authApiSlice = apiSlice.injectEndpoints({
     endpoints: builder => ({
         login: builder.mutation({
             query: credentials => ({
-                url: 'auth',
+                url: '/auth',
                 method: 'POST',
                 headers: {
-                    "Access-Control-Allow-Origin": "https://dbcheck-api.onrender.com",
+                    "Access-Control-Allow-Origin": "*",
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + credentials
                 },

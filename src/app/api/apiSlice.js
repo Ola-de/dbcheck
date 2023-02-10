@@ -3,11 +3,15 @@ import { setCredentials } from '../../features/auth/authSlice';
 
 const baseQuery = fetchBaseQuery({
     baseUrl: 'https://dbcheck-api.onrender.com',
+    mode: 'cors',
     credentials: 'include',
+    headers: {
+        'Access-Control-Allow-Origin': 'https://dbcheck-api.onrender.com',
+        'Access-Control-Allow-Credentials': true,
+    },
     prepareHeaders : (headers, {getState}) => {
         const token = getState().auth.token
         if(token){
-            headers.set('Access-Control-Allow-Origin','https://dbcheck-api.onrender.com')
             headers.set('Content-Type','application/json')
             headers.set('Authorization', `Bearer ${token}`)
         }
