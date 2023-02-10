@@ -29,9 +29,9 @@ const PersistLogin = () => {
             const verifyRefreshToken = async () => {
                 console.log('verifying refresh token')
                 try {
-                    //const response = 
-                    await refresh()
-                    //const { accessToken } = response.data
+                    const response = await refresh()
+                    const { accessToken } = response.data
+                    console.log(accessToken);
                     setTrueSuccess(true)
                 }
                 catch (err) {
@@ -59,7 +59,7 @@ const PersistLogin = () => {
         console.log('error')
         content = (
             <p className='errmsg'>
-                {`${error.data?.message} - `}
+                {`${error?.data?.message} - `}
                 <Link to="/login">Please login again</Link>.
             </p>
         )
